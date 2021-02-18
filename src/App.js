@@ -1,21 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Techno from './techno.js'
+import Header from'./Header.js'
+import Main from './Main';
+// import Main from'./Main.js'
+
 
 const App = () => {
   return (
     <div>
-      <h1>dddddddddddddddd</h1>
-      <div><Header /></div>
+      <Header />
+      <Main />
+      {/* <Main /> */}
+      <h1>323423yg</h1>
+      <Techno/>
     </div>
   );
 }
 
-const Header = () => {
-  return (
-    <div> 
-      <h1>dddddddddddddddd</h1>
-    </div>
-  );
-}
+
+
+
+
+
+
 
 export default App;
