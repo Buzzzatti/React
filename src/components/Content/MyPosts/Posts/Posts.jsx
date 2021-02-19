@@ -1,13 +1,14 @@
 import React from 'react'; 
 import style from './Posts.module.css';
+// import props from
 
-const Posts = () => {
+const Posts = (props) => {
     return(
         <div className={style.item}>
-            Post1
             <img src="https://i.imgflip.com/38iqvl.png"></img>
+            {props.message}
             <div>
-                <span>Like</span>
+                <span>Like {props.likes}</span>
             </div>
             <div>
                 <span>Comment</span>
