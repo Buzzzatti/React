@@ -1,28 +1,20 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
-import Techno from './techno.js'
-import Header from'./Header.js'
-import Main from './Main';
-// import Main from'./Main.js'
+import Components from './components/Content';
+import Header from './components/Header';
+import Nav from './components/Nav';
+
 
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Main />
-      {/* <Main /> */}
-      <h1>323423yg</h1>
-      <Techno/>
+    <div className='app-wrapper'>
+      <Header/>
+      <Nav/>
+      <Components/>
     </div>
   );
 }
-
-
-
-
-
-
 
 
 export default App;
