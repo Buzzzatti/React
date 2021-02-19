@@ -1,6 +1,6 @@
 # Social-App
 
-Another application of the social network format
+## Another application of the social network format
 
 # Installation
 
