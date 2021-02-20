@@ -3,12 +3,10 @@
     background: linear-gradient(180deg, #543d4987, transparent);
 }
 
-.item a{
+.item{
     color: blue;
-    text-decoration: none;
 }
 
-.item a.activeLink{
-    color: rgb(255, 255, 255) ;
+.item.active{
+    color: gold;
 }
-
