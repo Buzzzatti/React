@@ -1,3 +1,6 @@
+a{
+    text-decoration: none;
+}
 .dialogs{
     color: #fff;
     display: grid;
@@ -9,11 +12,11 @@
 }
 
 .dialog{ 
-
+    color: aqua;
 }
 
-.dialogItems .new{
-    color:  black;
+.active{
+    color:  rgb(71, 252, 0);
 }
 
 .messagesItems{
