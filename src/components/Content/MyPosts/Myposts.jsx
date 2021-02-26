@@ -9,6 +9,9 @@ const MyPosts = () => {
         {id: 2, like: 3, message: 'Second post words'}
     ]
 
+    let postsElements = postsData 
+    .map( (posts) =><Posts message={posts.message} likes={posts.like} id={posts.id}/> )
+
     return(
         <div className={style.postsBlock}>
             <h2>My Posts</h2>
@@ -23,8 +26,12 @@ const MyPosts = () => {
                 </div>                
             </div>
             <div className={style.posts}>
-                <Posts message={postsData[0].message} likes={postsData[0].like} id={postsData[0].id}/>
-                <Posts message={postsData[1].message} likes={postsData[1].like} id={postsData[1].id}/>
+                {
+                    postsElements
+                }
+
+                {/* <Posts message={postsData[0].message} likes={postsData[0].like} id={postsData[0].id}/>
+                <Posts message={postsData[1].message} likes={postsData[1].like} id={postsData[1].id}/> */}
             </div>
         </div>
     );
