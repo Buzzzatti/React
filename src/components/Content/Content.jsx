@@ -4,7 +4,10 @@ import ContentInfo from './ContentInfo/ContentInfo';
 import MyPosts from './MyPosts/Myposts';
 
 
-const Components = () => {
+const Components = (props) => {
+
+    
+
     return(
         <div>
             <ContentInfo />
@@ -14,7 +17,7 @@ const Components = () => {
             <div>
                 Avatar description
             </div> */}
-            <MyPosts/>
+            <MyPosts postsData={props.postsData} />
         </div>
     );
 }
