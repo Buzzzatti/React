@@ -24,10 +24,10 @@ const App = (props) => {
         <Nav  />
         <div className='app_wrapper_content'>
           {/* <Route  path='/dialogs' component={Dialogs}/> */}
-          <Route  path='/dialogs' render={ () => <Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/> }/>
+          <Route  path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> }/>
 
           {/* <Route  path='/content' component={Content} postsData={postsData} /> */}
-          <Route  path='/content' render={ () => <Content postsData={props.postsData}/> }/>
+          <Route  path='/content' render={ () => <Content state={props.state.contentPage} addPost={props.addPost}/> }/>
 
           <Route  path='/news' component={News}/>
           <Route  path='/music' component={Music}/>

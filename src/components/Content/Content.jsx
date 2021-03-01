@@ -17,7 +17,7 @@ const Components = (props) => {
             <div>
                 Avatar description
             </div> */}
-            <MyPosts postsData={props.postsData} />
+            <MyPosts postsData={props.state.postsData} addPost={props.addPost}/>
         </div>
     );
 }

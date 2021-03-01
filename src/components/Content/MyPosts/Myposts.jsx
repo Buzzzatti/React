@@ -4,13 +4,15 @@ import Posts from './Posts/Posts';
 
 const MyPosts = (props) => {
 
-    // let postsData = [
-    //     {id: 1, like: 19, message: 'First post words'},
-    //     {id: 2, like: 3, message: 'Second post words'}
-    // ]
-
     let postsElements = props.postsData 
     .map( (posts) => <Posts message={posts.message} likes={posts.like} id={posts.id}/> )
+
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        props.addPost(text);
+    }
 
     return(
         <div className={style.postsBlock}>
@@ -18,10 +20,10 @@ const MyPosts = (props) => {
             <div class={style.newPost}>
                 New posts
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPostElement} ></textarea>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={ addPost }>Add post</button>
                     <button>Clean</button>
                 </div>                
             </div>
