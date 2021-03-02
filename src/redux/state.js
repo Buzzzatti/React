@@ -1,8 +1,12 @@
+import {rerender} from '../render'
+
+
 let state = {
     contentPage:{
         postsData: [
             {id: 1, like: 19, message: 'First post words'},
-            {id: 2, like: 3, message: 'Second post words'}]
+            {id: 2, like: 3, message: 'Second post words'}],
+        newPostText:'Vvedite text'
     },
     dialogsPage:{
         dialogsData: [
@@ -19,15 +23,22 @@ let state = {
     
 }
 
-export let addPost = (postMessage) => {
+window.state = state;
+
+export let addPost = () => {
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.contentPage.newPostText,
         like:0
     };
 
     state.contentPage.postsData.push(newPost);
-    rerender();
+    rerender(state);
+}
+
+export let updateNewTextChange = (newText) => {
+    state.contentPage.newPostText = newText;
+    rerender(state);
 }
 
 export default state;
