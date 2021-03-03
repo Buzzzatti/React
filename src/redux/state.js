@@ -1,5 +1,6 @@
-import {rerender} from '../render'
-
+let rerender = () =>{
+    console.log('state was changed')
+}
 
 let state = {
     contentPage:{
@@ -25,7 +26,7 @@ let state = {
 
 window.state = state;
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5,
         message: state.contentPage.newPostText,
@@ -36,9 +37,13 @@ export let addPost = () => {
     rerender(state);
 }
 
-export let updateNewTextChange = (newText) => {
+export const updateNewTextChange = (newText) => {
     state.contentPage.newPostText = newText;
     rerender(state);
+}
+
+export const subscribe = (observer) => {
+    rerender = observer;
 }
 
 export default state;
