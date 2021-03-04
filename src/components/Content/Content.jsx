@@ -19,8 +19,8 @@ const Components = (props) => {
             </div> */}
             <MyPosts postsData={props.contentPage.postsData}
                         newPostText={props.contentPage.newPostText}
-                        addPost={props.addPost}
-                        updateNewTextChange={props.updateNewTextChange}/>
+                        dispatch={props.dispatch}
+                        />
                         
         </div>
     );
