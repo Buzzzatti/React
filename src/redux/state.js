@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST'; 
+
+const UPDATENEWTEXTPOST = 'UPDATE-NEW-POST-TEXT';
+
+
 let store = {
     _state: {
         contentPage:{
@@ -48,6 +53,13 @@ let store = {
             this._rerender(this._state);
         }
     }
+    
+}
+
+export const addPostActionCreater = () => ({type: ADD_POST})
+
+export const updateNewPostTextActionCreater = (text) => {
+    return { type:UPDATENEWTEXTPOST, newText: text}
     
 }
 
