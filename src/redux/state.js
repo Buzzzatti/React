@@ -2,6 +2,9 @@ const ADD_POST = 'ADD-POST';
 
 const UPDATENEWTEXTPOST = 'UPDATE-NEW-POST-TEXT';
 
+const ADD_MESSAGE = 'ADD-MESSAGE'; 
+
+const UPDATENEWTEXTMESSAGE = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let store = {
     _state: {
@@ -21,7 +24,8 @@ let store = {
             messagesData: [ 
                 {id: 1, message: 'Hi'},
                 {id: 2, message: 'How are you'},
-                {id: 3, message: 'What the Fuck '}]
+                {id: 3, message: 'What the Fuck '}],
+            newMessageText: 'Kak Dela?'
         }
         
     },
@@ -52,6 +56,20 @@ let store = {
             this._state.contentPage.newPostText = action.newText;
             this._rerender(this._state);
         }
+        else if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                id: 4,
+                message: this._state.dialogsPage.newMessageText,
+            };
+            this._state.dialogsPage.messagesData.push(newMessage);
+            this._state.dialogsPage.newMessageText = '';
+            this._rerender(this._state);
+        }
+        else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
+            this._state.dialogsPage.newMessageText = action.newText;
+            this._rerender(this._state);
+        }
+
     }
     
 }
@@ -60,6 +78,13 @@ export const addPostActionCreater = () => ({type: ADD_POST})
 
 export const updateNewPostTextActionCreater = (text) => {
     return { type:UPDATENEWTEXTPOST, newText: text}
+    
+}
+
+export const addMessageActionCreater = () => ({type: ADD_MESSAGE})
+
+export const updateNewMessageTextActionCreater = (text) => {
+    return { type:UPDATENEWTEXTMESSAGE, newText: text}
     
 }
 
