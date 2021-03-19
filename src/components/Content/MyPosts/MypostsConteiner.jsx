@@ -5,7 +5,7 @@ import {addPostActionCreater, updateNewPostTextActionCreater} from '../../../red
 
 
 
-const MyPosts = (props) => {
+const MyPostsConteiner = (props) => {
 
     let postsElements = props.postsData 
     .map( (posts) => <Posts message={posts.message} likes={posts.like} id={posts.id}/> )
@@ -49,4 +49,4 @@ const MyPosts = (props) => {
     );
 }
 
-export default MyPosts;
+export default MyPostsConteiner;
