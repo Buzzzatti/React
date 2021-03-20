@@ -1,16 +1,21 @@
 import React from 'react'; 
 import ContentInfo from './ContentInfo/ContentInfo';
-import MyPostsConteiner from './MyPosts/MypostsConteiner';
+import MyPosts from './MyPosts/Myposts';
+import MyPostsConteiner from './MyPosts/MyPostsConteiner';
 
 
 const Components = (props) => {
 
-    
 
     return(
         <div>
             <ContentInfo />
-            <MyPostsConteiner />
+            <MyPostsConteiner store={props.store} 
+                        // postsData={props.contentPage.postsData}
+                        // newPostText={props.contentPage.newPostText}
+                        // newMessageText={props.dialogsPage.newMessageText}
+                        // dispatch={props.dispatch}
+                        />
                         
         </div>
     );

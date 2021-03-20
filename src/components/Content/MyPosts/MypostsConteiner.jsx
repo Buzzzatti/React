@@ -1,52 +1,27 @@
 import React from 'react'; 
-import style from './Mygit osts.module.css';
-import Posts from './Posts/Posts';
 import {addPostActionCreater, updateNewPostTextActionCreater} from '../../../redux/content-reducer'
+import MyPosts from './Myposts';
 
 
 
 const MyPostsConteiner = (props) => {
 
-    let postsElements = props.postsData 
-    .map( (posts) => <Posts message={posts.message} likes={posts.like} id={posts.id}/> )
-
-    let newPostElement = React.createRef();
+    let state = props.store.getState();
 
     let addPost = () =>{
-        props.dispatch(addPostActionCreater());
+        props.store.dispatch(addPostActionCreater());
     }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
+    let onPostChange = (text) => {
         let action = updateNewPostTextActionCreater(text);
-        props.dispatch(action);
+        props.store.dispatch(action);
         
     }
 
 
-    return(
-        <div className={style.postsBlock}>
-            <h2>My Posts</h2>
-            <div class={style.newPost}>
-                New posts
-                <div>
-                    <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
-                </div>
-                <div>
-                    <button onClick={ addPost }>Add post</button>
-                    <button>Clean</button>
-                </div>                
-            </div>
-            <div className={style.posts}>
-                {
-                    postsElements
-                }
-
-                {/* <Posts message={postsData[0].message} likes={postsData[0].like} id={postsData[0].id}/>
-                <Posts message={postsData[1].message} likes={postsData[1].like} id={postsData[1].id}/> */}
-            </div>
-        </div>
-    );
+    return(<MyPosts updateNewPostText={onPostChange} addPost={addPost} 
+                    postsData={state.contentPage.postsData} 
+                    newPostText={state.contentPage.newPostText}/>)
 }
 
-export default MyPostsConteiner;
+export default MyPostsConteiner
