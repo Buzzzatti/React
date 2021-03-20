@@ -1,5 +1,5 @@
 import React from 'react'; 
-import style from './MyPosts.module.css';
+import style from './Mygit osts.module.css';
 import Posts from './Posts/Posts';
 import {addPostActionCreater, updateNewPostTextActionCreater} from '../../../redux/content-reducer'
 

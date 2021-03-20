@@ -23,11 +23,11 @@ const App = (props) => {
         <Header />
         <Nav  />
         <div className='app_wrapper_content'>
-          {/* <Route  path='/dialogs' component={Dialogs}/> */}
-          <Route  path='/dialogs' render={ () => <Dialogs store={props.store} /> }/>
+          
+          <Route  path='/dialogs' render={ () => <Dialogs /> }/>
 
-          {/* <Route  path='/content' component={Content} postsData={postsData} /> */}
-          <Route  path='/content' render={ () => <Content contentPage={props.state.contentPage} dispatch={props.dispatch} /> }/>
+          
+          <Route  path='/content' render={ () => <Content /> }/>
 
           <Route  path='/news' component={News}/>
           <Route  path='/music' component={Music}/>
