@@ -29,13 +29,13 @@ import {connect} from 'react-redux';
 //     )
 // }
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return{
         dialogsPage: state.dialogsPage
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return{
         updateNewMessageBody: () => {
             dispatch(sendMessageCreater());

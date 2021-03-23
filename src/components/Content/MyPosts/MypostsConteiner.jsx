@@ -33,14 +33,14 @@ import {connect} from 'react-redux';
 //     )
 // }
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return{
         postsData: state.contentPage.postsData,
         newPostText: state.contentPage.newPostText
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return{
         addPost: () => {
             dispatch(addPostActionCreater());
