@@ -8,10 +8,10 @@ const Dialogs = (props) => {
     let state = props.dialogsPage;
 
     let dialogsElements = state.dialogsData
-    .map( (dialog) => <DialogItem name={dialog.name} id={dialog.id}/>);
+    .map( (dialog) => <DialogItem name={dialog.name}  id={dialog.id}/>);
 
     let messagesElements = state.messagesData
-    .map( (messages) => <Message message={messages.message} id={messages.id}/>)
+    .map( (messages) => <Message message={messages.message}  id={messages.id}/>)
 
     let newMessageText =state.newMessageText;
     
