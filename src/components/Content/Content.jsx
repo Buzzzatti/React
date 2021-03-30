@@ -7,7 +7,7 @@ const Components = (props) => {
 
     return(
         <div>
-            <ContentInfo />
+            <ContentInfo profile={props.profile}/>
             <MyPostsConteiner />
         </div>
     );
