@@ -3,7 +3,6 @@ import Preloader from '../../common/preloader/Preloader';
 import style from '../Content.module.css';
 
 const ContentInfo = (props) => {
-    debugger;
     if (!props.profile) {
         return <Preloader />
     }
