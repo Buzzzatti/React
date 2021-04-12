@@ -1,3 +1,5 @@
+import { usersAPI } from "../api/api";
+
 const ADD_POST = 'ADD_POST'; 
 
 const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
@@ -41,7 +43,13 @@ const contentReducer = (state = initialState, action) => {
 }
 
 
+
 export const setUserProfile = (profile) =>({type: SET_USER_PROFILE, profile})
+export const getUserProfile = (userId) =>(dispatch) => {
+    usersAPI.getContent(userId).then(Response => {
+        dispatch(setUserProfile(Response.data));
+    });
+} 
 export const addPostActionCreater = () => ({type: ADD_POST})
 export const updateNewPostTextActionCreater = (text) => {
     return { type:UPDATE_NEW_POST_TEXT, newText: text}
